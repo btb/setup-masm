@@ -1,0 +1,15 @@
+name: 'Setup MASM'
+description: 'Setup a MASM environment'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: btb/masm
+        ref: v6.11d
+        path: MASM
+    - run: |
+        echo "$GITHUB_WORKSPACE/MASM/BIN" >> "$GITHUB_PATH"
+        echo "$GITHUB_WORKSPACE/MASM/BINR" >> "$GITHUB_PATH"
+        echo "INCLUDE=$GITHUB_WORKSPACE\\MASM\\INCLUDE;$INCLUDE" >> "$GITHUB_ENV"
+      shell: bash
