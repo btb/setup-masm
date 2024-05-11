@@ -1,2 +1,2 @@
-# setup-masm
-GitHub Action to setup MASM
+# setup-old-masm
+GitHub Action to setup old versions of MASM
